@@ -1,5 +1,5 @@
 export const fetcher = async (
-  resource: RequestInfo, 
+  resource: RequestInfo,
   init?: RequestInit,
 ): Promise<any> => {
   const res = await fetch(resource, init)
@@ -8,7 +8,7 @@ export const fetcher = async (
     // レスポンスが失敗したときに例外を投げる
     const errorRes = await res.json()
     const error = new Error(
-      errorRes.message ?? 'APIリクエスト中にエラーが発生しました'
+      errorRes.message ?? 'APIリクエスト中にエラーが発生しました',
     )
     throw error
   }
